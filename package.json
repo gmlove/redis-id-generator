@@ -1,0 +1,50 @@
+{
+	"name": "redis-id-generator",
+	"description": "distributed auto increment id generator implemented with redis",
+	"version": "0.1.0",
+	"author": "gmlove",
+	"private" : true,
+	"homepage" : "https://github.com/gmlove/redis-id-generator",
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/gmlove/redis-id-generator.git"
+	},
+	"bugs" : {
+		"url" : "https://github.com/gmlove/redis-id-generator/issues"
+	},
+	"keywords" : [
+		"id",
+		"generator",
+		"database",
+		"distributed"
+	],
+	"engines": {
+		"node": "0.10.x"
+	},
+	"scripts": {
+		"start": "grunt",
+		"test": "grunt test",
+		"postinstall": ""
+	},
+	"dependencies": {
+		"q": "~1.2.0",
+		"redis": "~0.12.1",
+		"hiredis": "~0.2.0",
+		"pomelo-logger": "~0.1.7"
+	},
+	"devDependencies": {
+		"should": "~4.5.0",
+		"grunt-cli": "~0.1.13",
+		"grunt-env": "~0.4.2",
+		"grunt-contrib-watch": "~0.6.1",
+		"grunt-contrib-jshint": "~0.10.0",
+		"grunt-contrib-clean": "~0.6.0",
+		"grunt-mocha-test": "~0.12.6",
+		"load-grunt-tasks": "~2.0.0",
+		"grunt-concurrent": "~0.4.1",
+		"grunt-nodemon": "~0.2.0",
+		"grunt-node-inspector": "~0.1.3",
+		"heapdump": "~0.3.5",
+		"blanket" : "~1.1.6"
+	}
+}
