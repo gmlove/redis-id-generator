@@ -17,7 +17,9 @@ describe('id-generator test', function(){
 		var initId1 = 3267;
 		var increment1 = 1;
 
-		Q.all(idgen.init(key, initId, increment), idgen.init(key1, initId1, increment1))
+		idgen.select(2).then(function(){
+			return Q.all(idgen.initKey(key, initId, increment), idgen.initKey(key1, initId1, increment1));
+		})
 		.then(function(){
 			return idgen.nextId(key);
 		})
