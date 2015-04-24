@@ -1,8 +1,10 @@
 'use strict';
 
-var Q = require('q');
+var P = require('bluebird');
 var should = require('should');
 var RedisIDGenerator = require('../');
+
+P.longStackTraces();
 
 describe('id-generator test', function(){
 
@@ -17,9 +19,7 @@ describe('id-generator test', function(){
 		var initId1 = 3267;
 		var increment1 = 1;
 
-		idgen.select(2).then(function(){
-			return Q.all(idgen.initKey(key, initId, increment), idgen.initKey(key1, initId1, increment1));
-		})
+		P.all([idgen.initKey(key, initId, increment), idgen.initKey(key1, initId1, increment1)])
 		.then(function(){
 			return idgen.nextId(key);
 		})
@@ -44,7 +44,7 @@ describe('id-generator test', function(){
 		.then(function(id){
 			id.should.eql(initId1 + increment1 + increment1);
 		})
-		.fin(function(){
+		.finally(function(){
 			idgen.close();
 		})
 		.nodeify(cb);
