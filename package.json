@@ -1,7 +1,7 @@
 {
 	"name": "redis-id-generator",
 	"description": "distributed auto increment id generator implemented with redis",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "gmlove",
 	"private" : false,
 	"homepage" : "https://github.com/gmlove/redis-id-generator",
@@ -27,9 +27,9 @@
 		"postinstall": ""
 	},
 	"dependencies": {
-		"bluebird": "~2.9.24",
+		"bluebird": "~2.9.34",
 		"redis": "~0.12.1",
-		"hiredis": "~0.2.0",
+		"hiredis": "~0.4.0",
 		"pomelo-logger": "~0.1.7"
 	},
 	"devDependencies": {
